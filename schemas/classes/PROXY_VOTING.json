@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PROXY_VOTING",
+  "type": "object",
+  "properties": {
+    "phone": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Contact phone number for the company"
+    },
+    "company": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Name of the voting company, exactly as it appears in the page header"
+    },
+    "mailDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date the document was mailed as it appears"
+    },
+    "companyZip": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Zip code of the company's location as it appears"
+    },
+    "signedDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date the document was signed as it appears, must return null if not signed"
+    },
+    "companyCity": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "City of the company exactly as it appears, excluding zip code"
+    },
+    "cusipNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Unique identifier for the company's shares"
+    },
+    "companyState": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "State of the company exactly as it appears"
+    },
+    "transferAgent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Name of the transfer agent exactly as it appears, just the name."
+    },
+    "signerFirstName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "First name of the signer, located in the signature section"
+    },
+    "votingBreakdown": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "List of brokers and their votes (for, against, abstain) for proposals as shown in the table. Don't include undefined rows.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "proposals": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Breakdown of votes (for, against, abstain) for each proposal by the broker",
+            "items": {
+              "type": "object",
+              "properties": {
+                "proposalId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Proposal ID exactly as it appears, including any asterisks if present"
+                },
+                "voteToDate": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "description": "Votes to date for the proposal",
+                  "properties": {
+                    "for": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Votes to date for, must return null if not provided"
+                    },
+                    "abstain": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Votes to date abstained, must return null if not provided"
+                    },
+                    "against": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Votes to date against, must return null if not provided"
+                    }
+                  },
+                  "required": [
+                    "for",
+                    "abstain",
+                    "against"
+                  ],
+                  "additionalProperties": false
+                },
+                "recentVotes": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "description": "Votes cast in the most recent session for the proposal (not votes to date)",
+                  "properties": {
+                    "for": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Most recent votes for, must return null if not provided"
+                    },
+                    "abstain": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Most recent votes abstained, must return null if not provided"
+                    },
+                    "against": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Most recent votes against, must return null if not provided"
+                    }
+                  },
+                  "required": [
+                    "for",
+                    "abstain",
+                    "against"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "proposalId"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "totalSharePositions": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Total shares held by the broker"
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Name of the broker exactly as it appears. Don't include text in parentheses."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "transferAgentCity": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "City of the transfer agent as it appears, excluding zip code"
+    },
+    "transferAgentState": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "State of the transfer agent exactly as it appears"
+    },
+    "recordDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Record date for determining voting eligibility as it appears"
+    },
+    "signerRole": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Role of the signer, located in the signature section below their first and last name"
+    },
+    "transferAgentZip": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Zip code of the transfer agent's location exactly as it appears"
+    },
+    "meetingDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date of the company's meeting as it appears"
+    },
+    "signerLastName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Last name of the signer, located in the signature section"
+    },
+    "transferAgentAddress": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Street address of the transfer agent exactly as it appears, only including number and street"
+    },
+    "companyAddress": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Street address of the company exactly as it appears, only including number and street"
+    },
+    "isSigned": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether the document has been signed"
+    }
+  },
+  "required": [
+    "company",
+    "transferAgent"
+  ],
+  "additionalProperties": false
+}

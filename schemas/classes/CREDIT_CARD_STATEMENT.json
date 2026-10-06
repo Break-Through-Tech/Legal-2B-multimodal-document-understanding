@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CREDIT_CARD_STATEMENT",
+  "type": "object",
+  "properties": {
+    "total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Net total (credits minus debits) for the period"
+    },
+    "period": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Date range for the account statement period",
+      "properties": {
+        "end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "End date of the statement period exactly as it appears"
+        },
+        "start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Start date of the statement period exactly as it appears"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "additionalProperties": false
+    },
+    "transactions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date of the transaction exactly as it appears"
+          },
+          "total": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Net balance after applying the deposit and withdrawal"
+          },
+          "deposit": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Amount deposited into the account"
+          },
+          "withdrawal": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Amount withdrawn from the account"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description for the transaction"
+          },
+          "debit": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Amount debited from the account"
+          },
+          "credit": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Amount credited to the account"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Total amount of the transaction"
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Type of transaction",
+            "enum": [
+              "credit",
+              "debit",
+              "deposit",
+              "withdrawal",
+              null
+            ]
+          }
+        },
+        "required": [
+          "date",
+          "description"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "accountNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Unique identifier for the account"
+    },
+    "totalDeposits": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total amount of deposits during the period"
+    },
+    "totalWithdrawals": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total amount of withdrawals during the period"
+    },
+    "totalDebits": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total amount of debits during the period"
+    },
+    "totalCredits": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total amount of credits during the period"
+    },
+    "amount": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total transaction amount for the period"
+    }
+  },
+  "required": [
+    "period",
+    "transactions",
+    "accountNumber"
+  ],
+  "additionalProperties": false
+}
