@@ -1,0 +1,16 @@
+group,value,word_recall,word_precision,n_docs
+all,all,0.7731,0.8514,1000
+document_quality,CLEAN,0.7737,0.8514,338
+document_quality,HIGH_QUALITY,0.815,0.8744,303
+document_quality,LOW_QUALITY,0.7836,0.8627,259
+document_quality,PHOTO,0.6174,0.7523,100
+scope,in_scope,0.7582,0.8095,264
+scope,out_of_scope,0.7963,0.8804,661
+scope,tail,0.6217,0.743,75
+in_scope_format,COMMERCIAL_LEASE_AGREEMENT,0.8966,0.8906,52
+in_scope_format,PATENT,0.803,0.7488,52
+in_scope_format,PETITION_FORM,0.7432,0.7248,51
+in_scope_format,PROXY_VOTING,0.8591,0.9042,50
+in_scope_format,REAL_ESTATE,0.5241,0.7845,59
+rotation,rotated,0.4907,0.5866,43
+rotation,upright,0.7858,0.8633,957

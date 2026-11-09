@@ -1,5 +1,17 @@
 datasets==5.0.1
 jsonschema==4.26.0
 matplotlib==3.11.2
+numpy==2.5.3
 pandas==3.0.6
 pillow==12.3.0
+pytest==9.2.0
+pytesseract==0.3.13
+scikit-learn==1.9.1
+sentence-transformers==6.2.0
+torch==2.15.0
+torchvision==0.29.2
+tqdm==4.70.1
+transformers==5.22.2
+# pytesseract also needs the Tesseract program itself (tested with 5.5.3):
+#   macOS: brew install tesseract   (or: conda create -n tesseract -c conda-forge tesseract)
+#   Colab / Ubuntu: apt-get install -y tesseract-ocr
