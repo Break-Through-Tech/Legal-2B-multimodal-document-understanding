@@ -11,6 +11,10 @@ vision_siglip,32,REAL_ESTATE,train,True,0.267,0.226
 vision_siglip,65,COMMERCIAL_LEASE_AGREEMENT,train,False,0.1443,0.226
 vision_siglip,135,REAL_ESTATE,train,True,0.2748,0.226
 vision_siglip,760,PATENT,train,False,0.1459,0.226
+vision_colqwen2,32,REAL_ESTATE,train,False,0.1103,0.3112
+vision_colqwen2,65,COMMERCIAL_LEASE_AGREEMENT,train,False,0.0527,0.3112
+vision_colqwen2,135,REAL_ESTATE,train,False,0.0961,0.3112
+vision_colqwen2,760,PATENT,train,False,0.08,0.3112
 ocr_tfidf,32,REAL_ESTATE,train,False,0.5388,0.6606
 ocr_tfidf,65,COMMERCIAL_LEASE_AGREEMENT,train,False,0.0024,0.6606
 ocr_tfidf,135,REAL_ESTATE,train,False,0.4772,0.6606
