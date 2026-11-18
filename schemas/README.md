@@ -41,9 +41,9 @@ The first run downloads the dataset from Hugging Face (about 360 MB, no account 
 
 | Command | What it does |
 |---|---|
-| `python schemas/build_class_schemas.py` | Builds the team's 5 in-scope types plus the 3 legal-adjacent ones, with a provisional split |
+| `python schemas/build_class_schemas.py` | Builds the team's 5 in-scope types plus the 3 legal-adjacent ones, using the team split in `data/splits.csv` |
 | `... --classes PATENT PROXY_VOTING` | Builds only the types you list |
-| `... --split-manifest data/splits.csv` | Uses the team's official split instead of the provisional one |
+| `... --split-manifest other.csv` | Uses a different split file. Without `data/splits.csv`, a provisional 70% split is the fallback |
 | `... --help` | Shows every option |
 
 A split manifest is a CSV with `id` and `split` columns. Rows labeled `train` build the schemas and rows labeled `val` evaluate them. Rows with any other label, like `test`, are never read, so they stay clean for the final evaluation.
@@ -61,7 +61,7 @@ A split manifest is a CSV with `id` and `split` columns. Rows labeled `train` bu
 ## How it works
 
 1. **Pick the types.** The list comes from the team's scope policy in `data/scope.py` (explained in `docs/scope_policy.md`): the 5 in-scope legal types, plus the 3 legal-adjacent ones while the team decides between 5 and 8 classes. If the policy changes, just rerun the script; no code changes needed.
-2. **Use training documents only.** Schemas are built only from the training split, so the documents used to evaluate them never shape them. Until the team's split exists, the script uses a **provisional** stratified split: 70% of each type, seed 42.
+2. **Use training documents only.** Schemas are built only from the training split, so the documents used to evaluate them never shape them. The split is the team's `data/splits.csv` (70 / 15 / 15 per type, seed 42, see `docs/splits.md`): `train` builds each schema, `val` checks it, and `test` is left alone for the final evaluation.
 3. **Merge the schemas** of each type's training documents:
    - keep every field any document has, and make a field required only if *every* document requires it;
    - combine types and allowed values (a field that's text in one document and a number in another accepts both);
@@ -74,11 +74,11 @@ A split manifest is a CSV with `id` and `split` columns. Rows labeled `train` bu
 
 ## Results
 
-These are from the provisional split, where each type has 15 to 18 held-out documents; see `REPORT.md` for the full tables.
+These are on the team split: each type is built from 35 to 41 training documents and checked on its 8 or 9 validation documents. See `REPORT.md` for the full tables.
 
 - **Fit:** all 8 merged schemas accept **100%** of held-out answers and cover 100% of their filled-in fields.
 - **Other types rejected:** every schema rejects **100%** of other document types' held-out answers. This is mostly by design: objects are closed and different types use different field names. Treat it as a sanity check that nothing is wide open, not as proof of quality.
-- **Where the gain comes from:** the dataset's own schemas accept only 13% of held-out `FORM_1040` answers, 40% for `PROXY_VOTING` and 53% for `CREDIT_CARD_STATEMENT`. The *Own + nulls* column shows that allowing `null` alone fixes this. So the merge doesn't raise validity: what it adds is **one reusable schema per type**, which the pipeline needs when a document arrives without its own.
+- **Where the gain comes from:** the dataset's own schemas accept only 25% of validation answers for `FORM_1040` and `PROXY_VOTING`, and 62% for `CREDIT_CARD_STATEMENT`. (On the earlier provisional split, with about twice as many held-out documents, it was 13%, 40% and 53%.) The *Own + nulls* column shows that allowing `null` alone fixes this. So the merge doesn't raise validity: what it adds is **one reusable schema per type**, which the pipeline needs when a document arrives without its own.
 - **Weak spot:** `PATENT`, `ACCOUNT_STATEMENT` and `FORM_1040` have no field that every document requires, so an empty answer `{}` still passes. The report flags this with ⚠️.
 
 ## Dataset issues found
@@ -92,7 +92,6 @@ These are from the provisional split, where each type has 15 to 18 held-out docu
 
 ## Limitations and next steps
 
-- Rerun with the team's official split once it exists (`--split-manifest`). The numbers may shift a little. The scope policy is already read automatically.
-- Held-out sets are small (15 to 18 documents per type), so one surprising document can move a percentage a lot.
+- Validation sets are small (8 or 9 documents per type), so one surprising document moves a percentage by over 10 points. The test split is untouched and can confirm the numbers at the end.
 - Some schemas are wide (`FORM_1040` has 66 fields). If extraction struggles, rarely seen fields could be trimmed using the *Field support* tables in `REPORT.md`.
 - Extraction scoring (November) needs a rule for fields a schema allows but a document's answer doesn't include.

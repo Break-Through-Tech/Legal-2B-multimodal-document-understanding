@@ -3,26 +3,12 @@
   "title": "PROXY_VOTING",
   "type": "object",
   "properties": {
-    "phone": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Contact phone number for the company"
-    },
     "company": {
       "type": [
         "string",
         "null"
       ],
       "description": "Name of the voting company, exactly as it appears in the page header"
-    },
-    "mailDate": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Date the document was mailed as it appears"
     },
     "companyZip": {
       "type": [
@@ -31,6 +17,13 @@
       ],
       "description": "Zip code of the company's location as it appears"
     },
+    "recordDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Record date for determining voting eligibility as it appears"
+    },
     "signedDate": {
       "type": [
         "string",
@@ -38,19 +31,19 @@
       ],
       "description": "Date the document was signed as it appears, must return null if not signed"
     },
+    "signerRole": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Role of the signer, located in the signature section below their first and last name"
+    },
     "companyCity": {
       "type": [
         "string",
         "null"
       ],
       "description": "City of the company exactly as it appears, excluding zip code"
-    },
-    "cusipNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Unique identifier for the company's shares"
     },
     "companyState": {
       "type": [
@@ -66,13 +59,6 @@
       ],
       "description": "Name of the transfer agent exactly as it appears, just the name."
     },
-    "signerFirstName": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "First name of the signer, located in the signature section"
-    },
     "votingBreakdown": {
       "type": [
         "array",
@@ -82,6 +68,13 @@
       "items": {
         "type": "object",
         "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Name of the broker exactly as it appears. Don't include text in parentheses."
+          },
           "proposals": {
             "type": [
               "array",
@@ -183,45 +176,10 @@
               "null"
             ],
             "description": "Total shares held by the broker"
-          },
-          "name": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Name of the broker exactly as it appears. Don't include text in parentheses."
           }
         },
         "additionalProperties": false
       }
-    },
-    "transferAgentCity": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "City of the transfer agent as it appears, excluding zip code"
-    },
-    "transferAgentState": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "State of the transfer agent exactly as it appears"
-    },
-    "recordDate": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Record date for determining voting eligibility as it appears"
-    },
-    "signerRole": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Role of the signer, located in the signature section below their first and last name"
     },
     "transferAgentZip": {
       "type": [
@@ -229,6 +187,20 @@
         "null"
       ],
       "description": "Zip code of the transfer agent's location exactly as it appears"
+    },
+    "mailDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date the document was mailed as it appears"
+    },
+    "cusipNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Unique identifier for the company's shares"
     },
     "meetingDate": {
       "type": [
@@ -244,12 +216,40 @@
       ],
       "description": "Last name of the signer, located in the signature section"
     },
+    "transferAgentState": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "State of the transfer agent exactly as it appears"
+    },
     "transferAgentAddress": {
       "type": [
         "string",
         "null"
       ],
       "description": "Street address of the transfer agent exactly as it appears, only including number and street"
+    },
+    "isSigned": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether the document has been signed"
+    },
+    "signerFirstName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "First name of the signer, located in the signature section"
+    },
+    "transferAgentCity": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "City of the transfer agent as it appears, excluding zip code"
     },
     "companyAddress": {
       "type": [
@@ -258,12 +258,12 @@
       ],
       "description": "Street address of the company exactly as it appears, only including number and street"
     },
-    "isSigned": {
+    "phone": {
       "type": [
-        "boolean",
+        "string",
         "null"
       ],
-      "description": "Indicates whether the document has been signed"
+      "description": "Contact phone number for the company"
     }
   },
   "required": [

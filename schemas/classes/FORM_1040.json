@@ -51,12 +51,12 @@
               ],
               "description": "Household employee wages not reported on Form W-2."
             },
-            "f": {
+            "g": {
               "type": [
                 "number",
                 "null"
               ],
-              "description": "Employer-provided adoption benefits from Form 8839."
+              "description": "Wages from Form 8919."
             },
             "i": {
               "type": [
@@ -65,12 +65,12 @@
               ],
               "description": "Nontaxable combat pay election."
             },
-            "g": {
+            "z": {
               "type": [
                 "number",
                 "null"
               ],
-              "description": "Wages from Form 8919."
+              "description": "Total of lines 1a through 1h"
             },
             "h": {
               "type": [
@@ -79,12 +79,12 @@
               ],
               "description": "Other earned income."
             },
-            "z": {
+            "f": {
               "type": [
                 "number",
                 "null"
               ],
-              "description": "Total of lines 1a through 1h"
+              "description": "Employer-provided adoption benefits from Form 8839."
             }
           },
           "additionalProperties": false
@@ -251,13 +251,6 @@
           ],
           "description": "Additional income from Schedule 1"
         },
-        "line9": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "description": "Taxpayer total income"
-        },
         "line11": {
           "type": [
             "number",
@@ -278,6 +271,13 @@
             "null"
           ],
           "description": "Taxpayer taxable income"
+        },
+        "line9": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Taxpayer total income"
         }
       },
       "additionalProperties": false
@@ -571,12 +571,12 @@
             "null"
           ]
         },
-        "firstName": {
+        "ssn": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Taxpayer first name. Exclude middle initial."
+          "description": "Primary social security number. Always return in the following format: 123-45-6789"
         },
         "lastName": {
           "type": [
@@ -584,12 +584,12 @@
             "null"
           ]
         },
-        "ssn": {
+        "firstName": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Primary social security number. Always return in the following format: 123-45-6789"
+          "description": "Taxpayer first name. Exclude middle initial."
         }
       },
       "additionalProperties": false

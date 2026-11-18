@@ -25,9 +25,16 @@
             ],
             "description": ""
           },
-          "symbol": {
+          "avgDailyVolume": {
             "type": [
-              "string",
+              "number",
+              "null"
+            ],
+            "description": ""
+          },
+          "ytdPriceChange": {
+            "type": [
+              "number",
               "null"
             ],
             "description": ""
@@ -39,16 +46,9 @@
             ],
             "description": ""
           },
-          "avgDailyVolume": {
+          "symbol": {
             "type": [
-              "number",
-              "null"
-            ],
-            "description": ""
-          },
-          "ytdPriceChange": {
-            "type": [
-              "number",
+              "string",
               "null"
             ],
             "description": ""
@@ -80,35 +80,6 @@
           "enum": [
             "YES",
             "NO",
-            null
-          ]
-        },
-        "mutualFunds": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Default tax disposition method for Mutual Funds",
-          "enum": [
-            "AVERAGE",
-            "FIFO",
-            "LIFO",
-            "Specific",
-            null
-          ]
-        },
-        "contingentBeneficiary": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Contingent beneficiary designation",
-          "enum": [
-            "Individual",
-            "Trust",
-            "Estate",
-            "Charity",
-            "None",
             null
           ]
         },
@@ -151,6 +122,46 @@
             null
           ]
         },
+        "mutualFunds": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Default tax disposition method for Mutual Funds",
+          "enum": [
+            "AVERAGE",
+            "FIFO",
+            "LIFO",
+            "Specific",
+            null
+          ]
+        },
+        "marginLimit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Margin limit relative to total portfolio value",
+          "enum": [
+            "25%",
+            "30%",
+            "40%",
+            "50%",
+            null
+          ]
+        },
+        "shortSellingEligibility": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Permission to short-sell securities",
+          "enum": [
+            "Allowed",
+            "Not Allowed",
+            null
+          ]
+        },
         "otherSecurities": {
           "type": [
             "string",
@@ -162,6 +173,21 @@
             "LIFO",
             "Specific",
             "HIFO",
+            null
+          ]
+        },
+        "contingentBeneficiary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Contingent beneficiary designation",
+          "enum": [
+            "Individual",
+            "Trust",
+            "Estate",
+            "Charity",
+            "None",
             null
           ]
         },
@@ -200,32 +226,6 @@
             "Text",
             "Phone Call",
             "None",
-            null
-          ]
-        },
-        "shortSellingEligibility": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Permission to short-sell securities",
-          "enum": [
-            "Allowed",
-            "Not Allowed",
-            null
-          ]
-        },
-        "marginLimit": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Margin limit relative to total portfolio value",
-          "enum": [
-            "25%",
-            "30%",
-            "40%",
-            "50%",
             null
           ]
         },
@@ -363,19 +363,19 @@
       ],
       "description": "Client representative",
       "properties": {
-        "contactInfo": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Phone number of the client representative"
-        },
         "consultantId": {
           "type": [
             "string",
             "null"
           ],
           "description": "Client representative id"
+        },
+        "contactInfo": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Phone number of the client representative"
         },
         "consultantName": {
           "type": [

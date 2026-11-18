@@ -3,7 +3,9 @@
 Usage (from the repository root):
     python schemas/build_class_schemas.py
     python schemas/build_class_schemas.py --classes PATENT PROXY_VOTING
-    python schemas/build_class_schemas.py --split-manifest data/splits.csv
+    python schemas/build_class_schemas.py --split-manifest path/to/other_splits.csv
+
+By default it uses data/splits.csv. If that file is missing, it falls back to a provisional split.
 
 Outputs:
     schemas/classes/<CLASS>.json   one JSON schema per class
@@ -47,7 +49,10 @@ DEFAULT_CLASSES = IN_SCOPE_FORMATS + [
     name for name in LEGAL_ADJACENT_FORMATS if name not in IN_SCOPE_FORMATS
 ]
 
-# Stand-in split, used only until the team's official train/val/test manifest exists.
+# The team's official split, written by data/splits.py. Used by default if the file exists.
+TEAM_SPLIT_MANIFEST = REPO_ROOT / "data" / "splits.csv"
+
+# Stand-in split, used only if the team's manifest is missing (e.g. on an old checkout).
 PROVISIONAL_SEED = 42
 PROVISIONAL_TRAIN_FRAC = 0.7
 
@@ -397,8 +402,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--classes", nargs="+", default=DEFAULT_CLASSES,
                         help="document classes to build (default: in-scope + legal-adjacent from data/scope.py)")
     parser.add_argument("--split-manifest", type=Path,
-                        help="CSV with 'id' and 'split' columns (default: a provisional split)")
+                        help="CSV with 'id' and 'split' columns (default: data/splits.csv if it exists, "
+                             "otherwise a provisional split)")
     return parser.parse_args()
+
+
+def display_path(path: Path) -> str:
+    """Show a path relative to the repo if possible, so the report doesn't show local folder paths."""
+    try:
+        return str(path.resolve().relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
 
 
 def main() -> None:
@@ -409,14 +423,15 @@ def main() -> None:
     if unknown:
         raise SystemExit(f"Unknown class(es): {unknown}")
 
-    if args.split_manifest:
-        split = split_from_manifest(docs, args.split_manifest)
-        split_note = (f"team split manifest `{args.split_manifest}`: 'train' builds the schemas, "
-                      f"'{EVAL_SPLIT}' evaluates them.")
+    manifest = args.split_manifest or (TEAM_SPLIT_MANIFEST if TEAM_SPLIT_MANIFEST.exists() else None)
+    if manifest:
+        split = split_from_manifest(docs, manifest)
+        split_note = (f"team split manifest `{display_path(manifest)}`: 'train' builds the schemas, "
+                      f"'{EVAL_SPLIT}' evaluates them. 'test' is never read.")
     else:
         split = provisional_split(docs)
         split_note = (f"**provisional** stratified split (seed {PROVISIONAL_SEED}, {PROVISIONAL_TRAIN_FRAC:.0%} train "
-                      "per class). Rerun with `--split-manifest` once the team's official split exists.")
+                      "per class), because `data/splits.csv` was not found.")
 
     CLASSES_DIR.mkdir(exist_ok=True)
     results = []
