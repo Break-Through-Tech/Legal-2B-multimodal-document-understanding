@@ -1,0 +1,221 @@
+id,detector,split,format,scope,document_quality,score,threshold,flagged,predicted_type,top_probability,channel,error
+3,confidence,test,TABLE,tail,PHOTO,0.0002,0.0012,False,PATENT,0.9998,vision_pixel_baseline,out of scope accepted
+7,confidence,test,DRIVER_LICENSE,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+8,confidence,test,PHOTO_CHART,tail,PHOTO,0.0,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,1.0,vision_pixel_baseline,out of scope accepted
+20,confidence,test,TABLE,tail,PHOTO,0.0001,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,0.9999,vision_pixel_baseline,out of scope accepted
+21,confidence,test,PHOTO_RECEIPT,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+25,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0003,0.0012,False,PROXY_VOTING,0.9997,vision_pixel_baseline,out of scope accepted
+28,confidence,test,SCANNED_TABLE,tail,PHOTO,0.0001,0.0012,False,PROXY_VOTING,0.9999,vision_pixel_baseline,out of scope accepted
+30,confidence,test,FORM,tail,PHOTO,0.0006,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,0.9994,vision_pixel_baseline,out of scope accepted
+35,confidence,test,WEB_TABLE,tail,PHOTO,0.0001,0.0012,False,PETITION_FORM,0.9999,vision_pixel_baseline,out of scope accepted
+41,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,vision_pixel_baseline,out of scope accepted
+43,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,PETITION_FORM,1.0,vision_pixel_baseline,out of scope accepted
+44,confidence,test,CAPTCHA,tail,PHOTO,0.0,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,1.0,vision_pixel_baseline,out of scope accepted
+47,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+51,confidence,test,WEB_TABLE,tail,PHOTO,0.0,0.0012,False,PETITION_FORM,1.0,vision_pixel_baseline,out of scope accepted
+52,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,1.0,vision_pixel_baseline,out of scope accepted
+61,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,1.0,vision_pixel_baseline,out of scope accepted
+63,confidence,test,WEB_TABLE,tail,PHOTO,0.0,0.0012,False,PETITION_FORM,1.0,vision_pixel_baseline,out of scope accepted
+104,confidence,test,REAL_ESTATE,in_scope,HIGH_QUALITY,0.0013,0.0012,True,REAL_ESTATE,0.9987,vision_pixel_baseline,legal flagged
+112,confidence,test,PHOTO_DOC,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+134,confidence,test,PHOTO_RECEIPT,tail,PHOTO,0.0,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,1.0,vision_pixel_baseline,out of scope accepted
+182,confidence,test,PETITION_FORM,in_scope,LOW_QUALITY,0.0093,0.0012,True,PETITION_FORM,0.9907,vision_pixel_baseline,legal flagged
+221,confidence,test,CHART,out_of_scope,CLEAN,0.001,0.0012,False,PETITION_FORM,0.999,vision_pixel_baseline,out of scope accepted
+224,confidence,test,COMMERCIAL_LEASE_AGREEMENT,in_scope,LOW_QUALITY,0.002,0.0012,True,COMMERCIAL_LEASE_AGREEMENT,0.998,vision_pixel_baseline,legal flagged
+242,confidence,test,EQUIPMENT_INSPECTION,out_of_scope,HIGH_QUALITY,0.0008,0.0012,False,PROXY_VOTING,0.9992,vision_pixel_baseline,out of scope accepted
+264,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+357,confidence,test,REAL_ESTATE,in_scope,CLEAN,0.0037,0.0012,True,REAL_ESTATE,0.9963,vision_pixel_baseline,legal flagged
+502,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+544,confidence,test,BANK_CHECK,out_of_scope,CLEAN,0.001,0.0012,False,PETITION_FORM,0.999,vision_pixel_baseline,out of scope accepted
+638,confidence,test,SLIDES,tail,PHOTO,0.0,0.0012,False,REAL_ESTATE,1.0,vision_pixel_baseline,out of scope accepted
+655,confidence,test,EQUIPMENT_INSPECTION,out_of_scope,HIGH_QUALITY,0.0011,0.0012,False,PROXY_VOTING,0.9989,vision_pixel_baseline,out of scope accepted
+664,confidence,test,PHOTO_RECEIPT,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,vision_pixel_baseline,out of scope accepted
+671,confidence,test,EQUIPMENT_INSPECTION,out_of_scope,HIGH_QUALITY,0.0007,0.0012,False,PROXY_VOTING,0.9993,vision_pixel_baseline,out of scope accepted
+694,confidence,test,FORM,tail,PHOTO,0.0002,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,0.9998,vision_pixel_baseline,out of scope accepted
+703,confidence,test,DRIVER_LICENSE,tail,PHOTO,0.0,0.0012,False,COMMERCIAL_LEASE_AGREEMENT,1.0,vision_pixel_baseline,out of scope accepted
+704,confidence,test,SCANNED_TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,vision_pixel_baseline,out of scope accepted
+705,confidence,test,REAL_ESTATE,in_scope,LOW_QUALITY,0.029,0.0012,True,REAL_ESTATE,0.971,vision_pixel_baseline,legal flagged
+776,confidence,test,COMMERCIAL_LEASE_AGREEMENT,in_scope,LOW_QUALITY,0.0013,0.0012,True,COMMERCIAL_LEASE_AGREEMENT,0.9987,vision_pixel_baseline,legal flagged
+787,confidence,test,PATENT,in_scope,LOW_QUALITY,0.01,0.0012,True,PATENT,0.99,vision_pixel_baseline,legal flagged
+812,confidence,test,CHART,out_of_scope,CLEAN,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+815,confidence,test,NUTRITION,out_of_scope,LOW_QUALITY,0.0009,0.0012,False,PROXY_VOTING,0.9991,vision_pixel_baseline,out of scope accepted
+853,confidence,test,DRIVER_LICENSE,tail,PHOTO,0.0003,0.0012,False,PATENT,0.9997,vision_pixel_baseline,out of scope accepted
+869,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PROXY_VOTING,1.0,vision_pixel_baseline,out of scope accepted
+941,confidence,test,BANK_CHECK,out_of_scope,CLEAN,0.0001,0.0012,False,PETITION_FORM,0.9999,vision_pixel_baseline,out of scope accepted
+991,confidence,test,NUTRITION,out_of_scope,CLEAN,0.0,0.0012,False,PETITION_FORM,1.0,vision_pixel_baseline,out of scope accepted
+83,distance,test,PROXY_VOTING,in_scope,CLEAN,0.0005,0.0004,True,PROXY_VOTING,1.0,vision_pixel_baseline,legal flagged
+104,distance,test,REAL_ESTATE,in_scope,HIGH_QUALITY,0.004,0.0004,True,REAL_ESTATE,0.9987,vision_pixel_baseline,legal flagged
+130,distance,test,PAY_IN_SHEET,out_of_scope,HIGH_QUALITY,0.0003,0.0004,False,PROXY_VOTING,0.9913,vision_pixel_baseline,out of scope accepted
+215,distance,test,REAL_ESTATE,in_scope,CLEAN,0.0072,0.0004,True,REAL_ESTATE,1.0,vision_pixel_baseline,legal flagged
+297,distance,test,PROXY_VOTING,in_scope,CLEAN,0.0005,0.0004,True,PROXY_VOTING,0.9991,vision_pixel_baseline,legal flagged
+341,distance,test,REAL_ESTATE,in_scope,LOW_QUALITY,0.0041,0.0004,True,REAL_ESTATE,0.9991,vision_pixel_baseline,legal flagged
+357,distance,test,REAL_ESTATE,in_scope,CLEAN,0.0052,0.0004,True,REAL_ESTATE,0.9963,vision_pixel_baseline,legal flagged
+358,distance,test,PROXY_VOTING,in_scope,CLEAN,0.0006,0.0004,True,PROXY_VOTING,0.9994,vision_pixel_baseline,legal flagged
+578,distance,test,REAL_ESTATE,in_scope,CLEAN,0.0053,0.0004,True,REAL_ESTATE,0.9999,vision_pixel_baseline,legal flagged
+597,distance,test,SHIFT_SCHEDULE,out_of_scope,HIGH_QUALITY,0.0003,0.0004,False,PROXY_VOTING,0.9838,vision_pixel_baseline,out of scope accepted
+644,distance,test,REAL_ESTATE,in_scope,CLEAN,0.0067,0.0004,True,REAL_ESTATE,0.999,vision_pixel_baseline,legal flagged
+689,distance,test,REAL_ESTATE,in_scope,HIGH_QUALITY,0.0051,0.0004,True,REAL_ESTATE,1.0,vision_pixel_baseline,legal flagged
+702,distance,test,REAL_ESTATE,in_scope,CLEAN,0.007,0.0004,True,REAL_ESTATE,1.0,vision_pixel_baseline,legal flagged
+705,distance,test,REAL_ESTATE,in_scope,LOW_QUALITY,0.003,0.0004,True,REAL_ESTATE,0.971,vision_pixel_baseline,legal flagged
+854,distance,test,EQUIPMENT_INSPECTION,out_of_scope,LOW_QUALITY,0.0003,0.0004,False,PROXY_VOTING,0.9958,vision_pixel_baseline,out of scope accepted
+858,distance,test,PHOTO_RECEIPT,tail,PHOTO,0.0004,0.0004,False,PROXY_VOTING,0.8227,vision_pixel_baseline,out of scope accepted
+887,distance,test,EQUIPMENT_INSPECTION,out_of_scope,LOW_QUALITY,0.0003,0.0004,False,PROXY_VOTING,0.9857,vision_pixel_baseline,out of scope accepted
+83,either,test,PROXY_VOTING,in_scope,CLEAN,,,True,PROXY_VOTING,1.0,vision_pixel_baseline,legal flagged
+104,either,test,REAL_ESTATE,in_scope,HIGH_QUALITY,,,True,REAL_ESTATE,0.9987,vision_pixel_baseline,legal flagged
+182,either,test,PETITION_FORM,in_scope,LOW_QUALITY,,,True,PETITION_FORM,0.9907,vision_pixel_baseline,legal flagged
+215,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,1.0,vision_pixel_baseline,legal flagged
+224,either,test,COMMERCIAL_LEASE_AGREEMENT,in_scope,LOW_QUALITY,,,True,COMMERCIAL_LEASE_AGREEMENT,0.998,vision_pixel_baseline,legal flagged
+297,either,test,PROXY_VOTING,in_scope,CLEAN,,,True,PROXY_VOTING,0.9991,vision_pixel_baseline,legal flagged
+341,either,test,REAL_ESTATE,in_scope,LOW_QUALITY,,,True,REAL_ESTATE,0.9991,vision_pixel_baseline,legal flagged
+357,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,0.9963,vision_pixel_baseline,legal flagged
+358,either,test,PROXY_VOTING,in_scope,CLEAN,,,True,PROXY_VOTING,0.9994,vision_pixel_baseline,legal flagged
+578,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,0.9999,vision_pixel_baseline,legal flagged
+644,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,0.999,vision_pixel_baseline,legal flagged
+689,either,test,REAL_ESTATE,in_scope,HIGH_QUALITY,,,True,REAL_ESTATE,1.0,vision_pixel_baseline,legal flagged
+702,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,1.0,vision_pixel_baseline,legal flagged
+705,either,test,REAL_ESTATE,in_scope,LOW_QUALITY,,,True,REAL_ESTATE,0.971,vision_pixel_baseline,legal flagged
+776,either,test,COMMERCIAL_LEASE_AGREEMENT,in_scope,LOW_QUALITY,,,True,COMMERCIAL_LEASE_AGREEMENT,0.9987,vision_pixel_baseline,legal flagged
+787,either,test,PATENT,in_scope,LOW_QUALITY,,,True,PATENT,0.99,vision_pixel_baseline,legal flagged
+8,confidence,test,PHOTO_CHART,tail,PHOTO,0.0002,0.0019,False,REAL_ESTATE,0.9998,vision_dinov2,out of scope accepted
+18,confidence,test,CHART,out_of_scope,CLEAN,0.0004,0.0019,False,REAL_ESTATE,0.9996,vision_dinov2,out of scope accepted
+818,confidence,test,CHART,out_of_scope,CLEAN,0.0004,0.0019,False,REAL_ESTATE,0.9996,vision_dinov2,out of scope accepted
+83,distance,test,PROXY_VOTING,in_scope,CLEAN,0.2374,0.226,True,PROXY_VOTING,0.8906,vision_siglip,legal flagged
+215,distance,test,REAL_ESTATE,in_scope,CLEAN,0.2447,0.226,True,REAL_ESTATE,0.9077,vision_siglip,legal flagged
+248,distance,test,PROXY_VOTING,in_scope,LOW_QUALITY,0.227,0.226,True,PROXY_VOTING,0.8915,vision_siglip,legal flagged
+702,distance,test,REAL_ESTATE,in_scope,CLEAN,0.2389,0.226,True,REAL_ESTATE,0.9317,vision_siglip,legal flagged
+705,distance,test,REAL_ESTATE,in_scope,LOW_QUALITY,0.2517,0.226,True,REAL_ESTATE,0.9128,vision_siglip,legal flagged
+83,either,test,PROXY_VOTING,in_scope,CLEAN,,,True,PROXY_VOTING,0.8906,vision_siglip,legal flagged
+215,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,0.9077,vision_siglip,legal flagged
+248,either,test,PROXY_VOTING,in_scope,LOW_QUALITY,,,True,PROXY_VOTING,0.8915,vision_siglip,legal flagged
+702,either,test,REAL_ESTATE,in_scope,CLEAN,,,True,REAL_ESTATE,0.9317,vision_siglip,legal flagged
+705,either,test,REAL_ESTATE,in_scope,LOW_QUALITY,,,True,REAL_ESTATE,0.9128,vision_siglip,legal flagged
+36,confidence,test,PHOTO_TABLE,tail,PHOTO,0.5219,0.5682,False,PETITION_FORM,0.4781,vision_colqwen2,out of scope accepted
+63,confidence,test,WEB_TABLE,tail,PHOTO,0.5677,0.5682,False,REAL_ESTATE,0.4323,vision_colqwen2,out of scope accepted
+991,confidence,test,NUTRITION,out_of_scope,CLEAN,0.5387,0.5682,False,PATENT,0.4613,vision_colqwen2,out of scope accepted
+36,distance,test,PHOTO_TABLE,tail,PHOTO,0.1458,0.3112,False,PETITION_FORM,0.4781,vision_colqwen2,out of scope accepted
+130,distance,test,PAY_IN_SHEET,out_of_scope,HIGH_QUALITY,0.3002,0.3112,False,PROXY_VOTING,0.3017,vision_colqwen2,out of scope accepted
+235,distance,test,PAY_IN_SHEET,out_of_scope,CLEAN,0.2255,0.3112,False,PATENT,0.3682,vision_colqwen2,out of scope accepted
+308,distance,test,PAY_IN_SHEET,out_of_scope,LOW_QUALITY,0.3016,0.3112,False,PROXY_VOTING,0.3037,vision_colqwen2,out of scope accepted
+991,distance,test,NUTRITION,out_of_scope,CLEAN,0.2883,0.3112,False,PATENT,0.4613,vision_colqwen2,out of scope accepted
+997,distance,test,LIST,tail,PHOTO,0.3001,0.3112,False,PATENT,0.4086,vision_colqwen2,out of scope accepted
+36,either,test,PHOTO_TABLE,tail,PHOTO,,,False,PETITION_FORM,0.4781,vision_colqwen2,out of scope accepted
+991,either,test,NUTRITION,out_of_scope,CLEAN,,,False,PATENT,0.4613,vision_colqwen2,out of scope accepted
+5,confidence,test,TABLE,tail,PHOTO,0.0052,0.0112,False,REAL_ESTATE,0.9948,ocr_tfidf,out of scope accepted
+18,confidence,test,CHART,out_of_scope,CLEAN,0.0001,0.0112,False,PATENT,0.9999,ocr_tfidf,out of scope accepted
+20,confidence,test,TABLE,tail,PHOTO,0.0068,0.0112,False,PATENT,0.9932,ocr_tfidf,out of scope accepted
+30,confidence,test,FORM,tail,PHOTO,0.0082,0.0112,False,PATENT,0.9918,ocr_tfidf,out of scope accepted
+51,confidence,test,WEB_TABLE,tail,PHOTO,0.0032,0.0112,False,REAL_ESTATE,0.9968,ocr_tfidf,out of scope accepted
+53,confidence,test,FORM,tail,PHOTO,0.0025,0.0112,False,PATENT,0.9975,ocr_tfidf,out of scope accepted
+61,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0058,0.0112,False,PATENT,0.9942,ocr_tfidf,out of scope accepted
+63,confidence,test,WEB_TABLE,tail,PHOTO,0.0008,0.0112,False,REAL_ESTATE,0.9992,ocr_tfidf,out of scope accepted
+74,confidence,test,DELIVERY_NOTE,out_of_scope,CLEAN,0.0002,0.0112,False,REAL_ESTATE,0.9998,ocr_tfidf,out of scope accepted
+87,confidence,test,PATIENT_INTAKE,out_of_scope,LOW_QUALITY,0.0018,0.0112,False,PATENT,0.9982,ocr_tfidf,out of scope accepted
+100,confidence,test,DELIVERY_NOTE,out_of_scope,LOW_QUALITY,0.0067,0.0112,False,PROXY_VOTING,0.9933,ocr_tfidf,out of scope accepted
+112,confidence,test,PHOTO_DOC,tail,PHOTO,0.0005,0.0112,False,PATENT,0.9995,ocr_tfidf,out of scope accepted
+169,confidence,test,TABLE,tail,PHOTO,0.0008,0.0112,False,PATENT,0.9992,ocr_tfidf,out of scope accepted
+176,confidence,test,DELIVERY_NOTE,out_of_scope,LOW_QUALITY,0.0,0.0112,False,REAL_ESTATE,1.0,ocr_tfidf,out of scope accepted
+185,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0112,False,COMMERCIAL_LEASE_AGREEMENT,1.0,ocr_tfidf,out of scope accepted
+243,confidence,test,GLOSSARY,out_of_scope,LOW_QUALITY,0.0,0.0112,False,COMMERCIAL_LEASE_AGREEMENT,1.0,ocr_tfidf,out of scope accepted
+259,confidence,test,PATIENT_INTAKE,out_of_scope,CLEAN,0.0024,0.0112,False,PROXY_VOTING,0.9976,ocr_tfidf,out of scope accepted
+293,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0001,0.0112,False,REAL_ESTATE,0.9999,ocr_tfidf,out of scope accepted
+316,confidence,test,DELIVERY_NOTE,out_of_scope,HIGH_QUALITY,0.0,0.0112,False,REAL_ESTATE,1.0,ocr_tfidf,out of scope accepted
+399,confidence,test,DELIVERY_NOTE,out_of_scope,CLEAN,0.0035,0.0112,False,PROXY_VOTING,0.9965,ocr_tfidf,out of scope accepted
+426,confidence,test,SCANNED_FORM,tail,PHOTO,0.003,0.0112,False,REAL_ESTATE,0.997,ocr_tfidf,out of scope accepted
+430,confidence,test,TABLE,tail,PHOTO,0.0106,0.0112,False,REAL_ESTATE,0.9894,ocr_tfidf,out of scope accepted
+465,confidence,test,FORM,tail,PHOTO,0.0008,0.0112,False,PATENT,0.9992,ocr_tfidf,out of scope accepted
+546,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0088,0.0112,False,COMMERCIAL_LEASE_AGREEMENT,0.9912,ocr_tfidf,out of scope accepted
+598,confidence,test,CREDIT_CARD_STATEMENT,out_of_scope,CLEAN,0.0024,0.0112,False,COMMERCIAL_LEASE_AGREEMENT,0.9976,ocr_tfidf,out of scope accepted
+641,confidence,test,CREDIT_CARD_STATEMENT,out_of_scope,CLEAN,0.0017,0.0112,False,COMMERCIAL_LEASE_AGREEMENT,0.9983,ocr_tfidf,out of scope accepted
+642,confidence,test,DELIVERY_NOTE,out_of_scope,HIGH_QUALITY,0.0037,0.0112,False,PROXY_VOTING,0.9963,ocr_tfidf,out of scope accepted
+660,confidence,test,DELIVERY_NOTE,out_of_scope,CLEAN,0.0,0.0112,False,REAL_ESTATE,1.0,ocr_tfidf,out of scope accepted
+661,confidence,test,SCANNED_FORM,tail,PHOTO,0.0014,0.0112,False,PATENT,0.9986,ocr_tfidf,out of scope accepted
+679,confidence,test,EARNINGS_REPORT,tail,PHOTO,0.0,0.0112,False,PATENT,1.0,ocr_tfidf,out of scope accepted
+740,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0112,False,PATENT,1.0,ocr_tfidf,out of scope accepted
+789,confidence,test,PATIENT_INTAKE,out_of_scope,HIGH_QUALITY,0.0006,0.0112,False,PROXY_VOTING,0.9994,ocr_tfidf,out of scope accepted
+806,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0112,False,COMMERCIAL_LEASE_AGREEMENT,1.0,ocr_tfidf,out of scope accepted
+810,confidence,test,CREDIT_CARD_STATEMENT,out_of_scope,LOW_QUALITY,0.0,0.0112,False,PATENT,1.0,ocr_tfidf,out of scope accepted
+828,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0001,0.0112,False,REAL_ESTATE,0.9999,ocr_tfidf,out of scope accepted
+836,confidence,test,PATIENT_INTAKE,out_of_scope,CLEAN,0.0032,0.0112,False,PROXY_VOTING,0.9968,ocr_tfidf,out of scope accepted
+869,confidence,test,TABLE,tail,PHOTO,0.0069,0.0112,False,PATENT,0.9931,ocr_tfidf,out of scope accepted
+29,distance,test,MATH_VQA,tail,PHOTO,0.6219,0.6631,False,COMMERCIAL_LEASE_AGREEMENT,0.6589,ocr_tfidf,out of scope accepted
+30,distance,test,FORM,tail,PHOTO,0.6616,0.6631,False,PATENT,0.9918,ocr_tfidf,out of scope accepted
+34,distance,test,LIST,tail,PHOTO,0.6543,0.6631,False,PROXY_VOTING,0.5056,ocr_tfidf,out of scope accepted
+36,distance,test,PHOTO_TABLE,tail,PHOTO,0.2352,0.6631,False,PATENT,0.4509,ocr_tfidf,out of scope accepted
+53,distance,test,FORM,tail,PHOTO,0.5438,0.6631,False,PATENT,0.9975,ocr_tfidf,out of scope accepted
+407,distance,test,DRIVER_LICENSE,tail,PHOTO,0.6294,0.6631,False,COMMERCIAL_LEASE_AGREEMENT,0.8856,ocr_tfidf,out of scope accepted
+30,either,test,FORM,tail,PHOTO,,,False,PATENT,0.9918,ocr_tfidf,out of scope accepted
+53,either,test,FORM,tail,PHOTO,,,False,PATENT,0.9975,ocr_tfidf,out of scope accepted
+36,confidence,test,PHOTO_TABLE,tail,PHOTO,0.2887,0.4837,False,PETITION_FORM,0.7113,ocr_bge,out of scope accepted
+704,confidence,test,SCANNED_TABLE,tail,PHOTO,0.4694,0.4837,False,PATENT,0.5306,ocr_bge,out of scope accepted
+997,confidence,test,LIST,tail,PHOTO,0.3695,0.4837,False,PATENT,0.6305,ocr_bge,out of scope accepted
+36,distance,test,PHOTO_TABLE,tail,PHOTO,0.177,0.2019,False,PETITION_FORM,0.7113,ocr_bge,out of scope accepted
+36,either,test,PHOTO_TABLE,tail,PHOTO,,,False,PETITION_FORM,0.7113,ocr_bge,out of scope accepted
+0,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+4,confidence,test,TABLE,tail,PHOTO,0.0004,0.0012,False,PATENT,0.9996,gt_tfidf,out of scope accepted
+5,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,REAL_ESTATE,1.0,gt_tfidf,out of scope accepted
+6,confidence,test,SLIDES,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+7,confidence,test,DRIVER_LICENSE,tail,PHOTO,0.0001,0.0012,False,REAL_ESTATE,0.9999,gt_tfidf,out of scope accepted
+10,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+20,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+21,confidence,test,PHOTO_RECEIPT,tail,PHOTO,0.0006,0.0012,False,PATENT,0.9994,gt_tfidf,out of scope accepted
+25,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+26,confidence,test,SCANNED_FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+29,confidence,test,MATH_VQA,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+30,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+35,confidence,test,WEB_TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+36,confidence,test,PHOTO_TABLE,tail,PHOTO,0.0004,0.0012,False,PATENT,0.9996,gt_tfidf,out of scope accepted
+40,confidence,test,SCANNED_FORM,tail,PHOTO,0.0001,0.0012,False,PATENT,0.9999,gt_tfidf,out of scope accepted
+43,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+47,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+52,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+53,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+54,confidence,test,SIGNATURE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+61,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+108,confidence,test,NUTRITION,out_of_scope,HIGH_QUALITY,0.0001,0.0012,False,PATENT,0.9999,gt_tfidf,out of scope accepted
+112,confidence,test,PHOTO_DOC,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+169,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+185,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+190,confidence,test,MATH_VQA,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+194,confidence,test,PHOTO_CHART,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+243,confidence,test,GLOSSARY,out_of_scope,LOW_QUALITY,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+259,confidence,test,PATIENT_INTAKE,out_of_scope,CLEAN,0.0,0.0012,False,PROXY_VOTING,1.0,gt_tfidf,out of scope accepted
+264,confidence,test,TABLE,tail,PHOTO,0.0002,0.0012,False,PATENT,0.9998,gt_tfidf,out of scope accepted
+303,confidence,test,PHOTO_TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+316,confidence,test,DELIVERY_NOTE,out_of_scope,HIGH_QUALITY,0.0011,0.0012,False,REAL_ESTATE,0.9989,gt_tfidf,out of scope accepted
+419,confidence,test,CHART,out_of_scope,CLEAN,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+465,confidence,test,FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+469,confidence,test,EARNINGS_REPORT,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+484,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+494,confidence,test,NUTRITION,out_of_scope,HIGH_QUALITY,0.0004,0.0012,False,PATENT,0.9996,gt_tfidf,out of scope accepted
+502,confidence,test,PHOTO_NUTRITION,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+541,confidence,test,TABLE,tail,PHOTO,0.0001,0.0012,False,PATENT,0.9999,gt_tfidf,out of scope accepted
+546,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+579,confidence,test,CHART,out_of_scope,CLEAN,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+627,confidence,test,NUTRITION,out_of_scope,LOW_QUALITY,0.0002,0.0012,False,PATENT,0.9998,gt_tfidf,out of scope accepted
+634,confidence,test,NUTRITION,out_of_scope,CLEAN,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+638,confidence,test,SLIDES,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+661,confidence,test,SCANNED_FORM,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+664,confidence,test,PHOTO_RECEIPT,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+679,confidence,test,EARNINGS_REPORT,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+724,confidence,test,FORM,tail,PHOTO,0.0008,0.0012,False,PATENT,0.9992,gt_tfidf,out of scope accepted
+733,confidence,test,NUTRITION,out_of_scope,LOW_QUALITY,0.0005,0.0012,False,PATENT,0.9995,gt_tfidf,out of scope accepted
+740,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+758,confidence,test,GLOSSARY,out_of_scope,CLEAN,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+773,confidence,test,PATIENT_INTAKE,out_of_scope,HIGH_QUALITY,0.0,0.0012,False,REAL_ESTATE,1.0,gt_tfidf,out of scope accepted
+789,confidence,test,PATIENT_INTAKE,out_of_scope,HIGH_QUALITY,0.0,0.0012,False,PROXY_VOTING,1.0,gt_tfidf,out of scope accepted
+806,confidence,test,GLOSSARY,out_of_scope,HIGH_QUALITY,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+810,confidence,test,CREDIT_CARD_STATEMENT,out_of_scope,LOW_QUALITY,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+811,confidence,test,NUTRITION,out_of_scope,HIGH_QUALITY,0.0001,0.0012,False,PATENT,0.9999,gt_tfidf,out of scope accepted
+815,confidence,test,NUTRITION,out_of_scope,LOW_QUALITY,0.0001,0.0012,False,PATENT,0.9999,gt_tfidf,out of scope accepted
+836,confidence,test,PATIENT_INTAKE,out_of_scope,CLEAN,0.0,0.0012,False,PROXY_VOTING,1.0,gt_tfidf,out of scope accepted
+869,confidence,test,TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+911,confidence,test,PHOTO_TABLE,tail,PHOTO,0.0,0.0012,False,PATENT,1.0,gt_tfidf,out of scope accepted
+991,confidence,test,NUTRITION,out_of_scope,CLEAN,0.0001,0.0012,False,PATENT,0.9999,gt_tfidf,out of scope accepted
+36,distance,test,PHOTO_TABLE,tail,PHOTO,0.2129,0.3908,False,PATENT,0.9996,gt_tfidf,out of scope accepted
+310,distance,test,PATENT,in_scope,HIGH_QUALITY,0.414,0.3908,True,PATENT,1.0,gt_tfidf,legal flagged
+591,distance,test,PATENT,in_scope,HIGH_QUALITY,0.4368,0.3908,True,PATENT,1.0,gt_tfidf,legal flagged
+968,distance,test,PATENT,in_scope,HIGH_QUALITY,0.4161,0.3908,True,PATENT,1.0,gt_tfidf,legal flagged
+36,either,test,PHOTO_TABLE,tail,PHOTO,,,False,PATENT,0.9996,gt_tfidf,out of scope accepted
+310,either,test,PATENT,in_scope,HIGH_QUALITY,,,True,PATENT,1.0,gt_tfidf,legal flagged
+591,either,test,PATENT,in_scope,HIGH_QUALITY,,,True,PATENT,1.0,gt_tfidf,legal flagged
+968,either,test,PATENT,in_scope,HIGH_QUALITY,,,True,PATENT,1.0,gt_tfidf,legal flagged
