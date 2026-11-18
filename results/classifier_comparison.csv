@@ -1,0 +1,10 @@
+channel,C,val_macro_f1,test_macro_f1,test_accuracy
+majority_baseline,,,0.075,0.2308
+vision_pixel_baseline,1.0,0.9765,1.0,1.0
+vision_dinov2,10.0,1.0,1.0,1.0
+vision_siglip,10.0,1.0,1.0,1.0
+vision_colqwen2,10.0,1.0,1.0,1.0
+ocr_tfidf,10.0,1.0,1.0,1.0
+ocr_bge,10.0,1.0,1.0,1.0
+gt_tfidf,10.0,1.0,1.0,1.0
+gt_bge,10.0,1.0,1.0,1.0
