@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COMMERCIAL_LEASE_AGREEMENT",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date of the lease, formatted as YYYY-MM-DD",
+      "format": "date"
+    },
+    "rent": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "monthlyAmount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "securityDeposit": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "monthlyAmount",
+        "securityDeposit"
+      ],
+      "additionalProperties": false
+    },
+    "lease": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "years": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "months": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "endDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "End date of the lease, formatted as YYYY-MM-DD",
+          "format": "date"
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Start date of the lease, formatted as YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "years",
+        "months",
+        "endDate",
+        "startDate"
+      ],
+      "additionalProperties": false
+    },
+    "lessee": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "streetAddress": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "state",
+        "streetAddress"
+      ],
+      "additionalProperties": false
+    },
+    "lessor": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "streetAddress": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "state",
+        "streetAddress"
+      ],
+      "additionalProperties": false
+    },
+    "premises": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "spaceType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Office Space",
+            "Retail Space",
+            "Warehouse",
+            "Industrial Space",
+            null
+          ]
+        },
+        "squareFeet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "streetAddress": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "spaceType",
+        "squareFeet",
+        "streetAddress"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "date",
+    "rent",
+    "lease",
+    "lessee",
+    "lessor",
+    "premises"
+  ],
+  "additionalProperties": false
+}

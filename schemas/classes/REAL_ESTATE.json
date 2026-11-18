@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REAL_ESTATE",
+  "type": "object",
+  "properties": {
+    "transactions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Quarterly real estate transcations by property class.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The value of the transaction in millions."
+          },
+          "period": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The period in the format Q[1-4]-YYYY (e.g., Q1-2017).",
+            "pattern": "^Q[1-4]-\\d{4}$"
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The category of the transaction (e.g., Multifamily Housing)."
+          }
+        },
+        "required": [
+          "value",
+          "period",
+          "category"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "transactionsByCity": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Total Real estate transcations by city.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "City name"
+          },
+          "year": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The year in YYYY format (e.g. 2017)."
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Total value transactions in millions."
+          }
+        },
+        "required": [
+          "city",
+          "year",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "transactions"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PATENT",
+  "type": "object",
+  "properties": {
+    "latestPatent": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Most recent patent from the references cited.",
+      "properties": {
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Month and year of the patent (ex: 2/1975)"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name associated with the referenced patent"
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Status of the referenced patent",
+          "enum": [
+            "A",
+            "B1",
+            "B2",
+            "C",
+            "D",
+            null
+          ]
+        },
+        "patentNumber": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Referenced patent number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "patentStatus": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Current patent status (e.g., application or granted status). Appears next to the patent number.",
+      "enum": [
+        "A",
+        "B1",
+        "B2",
+        "C",
+        "D",
+        null
+      ]
+    },
+    "patentNumber": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Current patent number"
+    },
+    "technologyCategory": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "IPC classification (section, class, and subclass). Example: B01F. Include only the first 4 characters."
+    }
+  },
+  "additionalProperties": false
+}
