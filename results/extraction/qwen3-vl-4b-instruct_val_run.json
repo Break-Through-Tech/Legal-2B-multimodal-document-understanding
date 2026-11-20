@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen3-VL-4B-Instruct",
+  "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "decoding": "greedy",
+  "max_pixels": 4194304,
+  "max_new_tokens": 4096,
+  "prompt_example": "This image is a patent document.\nFill in the JSON schema below with the data in the image.\n- Copy names, numbers and dates exactly as they appear.\n- Use null for a field that is not in the document.\n- Reply with the JSON object only, no other text.\n\nJSON schema:\n{\"...\": \"the PATENT schema goes here\"}",
+  "started": "2026-11-19T04:43:04+00:00",
+  "gpu": "NVIDIA RTX A6000",
+  "python": "3.12.3",
+  "torch": "2.15.0+cu132",
+  "transformers": "5.22.2"
+}

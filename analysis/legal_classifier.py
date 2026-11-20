@@ -13,7 +13,7 @@ run on test.
 Outputs:
     results/classifier_comparison.csv   macro F1 and accuracy per channel, baseline included
     results/classifier_per_class.csv    precision / recall / F1 / support per type, test split
-    results/figures/classifier_confusion_<channel>.png   for the best channel on val
+    results/figures/classifier_confusion_vision_colqwen2.png   for ColQwen2, the team's pick
 
 Usage (from the repository root):
     python -m analysis.legal_classifier
@@ -39,6 +39,7 @@ from analysis.channels import FIGURES_DIR, RESULTS_DIR, load_channels
 from data.build_dataset import load_documents
 
 C_GRID = [0.001, 0.01, 0.1, 1.0, 10.0]
+CHOSEN_CHANNEL = "vision_colqwen2"  # the team's pick for the classifier (Nov 10 lab)
 
 
 def fit_classifier(X: np.ndarray, y: np.ndarray, C: float) -> Pipeline:
@@ -121,17 +122,20 @@ def main() -> None:
     pd.DataFrame(per_class).round(4).to_csv(RESULTS_DIR / "classifier_per_class.csv", index=False)
     print(comparison.round(3).to_string(index=False))
 
-    # Confusion matrix for the channel that did best on val. Ties keep the channel order in
-    # analysis/channels.py. Test scores are never used to choose.
-    learned = comparison.dropna(subset=["val_macro_f1"])
-    best = learned.sort_values("val_macro_f1", ascending=False, kind="stable").iloc[0]["channel"]
+    # Confusion matrix for the channel the team chose for the classifier (ColQwen2, Nov 10 lab).
+    # Almost every channel ties at val macro F1 1.00, so the scores alone can't pick one.
+    if CHOSEN_CHANNEL not in test_predictions:
+        print(f"\n{CHOSEN_CHANNEL} is not cached, so no confusion matrix.")
+        return
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(7, 6))
-    ConfusionMatrixDisplay.from_predictions(y[test], test_predictions[best], ax=ax, xticks_rotation=45, colorbar=False)
-    ax.set_title(f"Legal-type classifier on test, {best}")
+    ConfusionMatrixDisplay.from_predictions(y[test], test_predictions[CHOSEN_CHANNEL], ax=ax,
+                                            xticks_rotation=45, colorbar=False)
+    plt.setp(ax.get_xticklabels(), ha="right", rotation_mode="anchor")  # keep long type names apart
+    ax.set_title(f"Legal-type classifier on test, {CHOSEN_CHANNEL}")
     fig.tight_layout()
-    fig.savefig(FIGURES_DIR / f"classifier_confusion_{best}.png", dpi=150)
-    print(f"\nBest channel on val: {best}. Confusion matrix saved.")
+    fig.savefig(FIGURES_DIR / f"classifier_confusion_{CHOSEN_CHANNEL}.png", dpi=150)
+    print(f"\nConfusion matrix saved for {CHOSEN_CHANNEL}.")
 
 
 if __name__ == "__main__":

@@ -6,8 +6,8 @@ Two detectors, each giving every document a score where higher means "more likel
   The idea: if the classifier can't decide which legal type a document is, it may not be legal.
 - `distance` (3c): 1 minus the mean cosine similarity to the 5 nearest in-scope training
   documents. This is the k-NN detector from analysis/out_of_scope.py, reused as is.
-- `either`: flags a document if either detector flags it. Only to see whether the two
-  catch different documents; it has no single score, so no ROC-AUC.
+- `either`: flags a document if either detector flags it. It has no single score, so no
+  ROC-AUC. The pipeline (extraction/route.py) uses it on the ColQwen2 channel.
 
 Threshold (3d): for each detector and channel, the score that maximizes F1 for flagging on
 the val split (in-scope val documents should pass, out-of-scope val documents should be
@@ -41,6 +41,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix, f1_score, precision_score, recall_score, roc_auc_score
+from sklearn.pipeline import Pipeline
 
 from analysis.channels import FIGURES_DIR, RESULTS_DIR, load_channels
 from analysis.legal_classifier import fit_classifier, in_scope_indices, train_on_channel
@@ -113,13 +114,15 @@ def photo_check(docs: pd.DataFrame, X: np.ndarray, C: float, thresholds: dict, r
     return rows
 
 
-def evaluate_channel(docs: pd.DataFrame, X: np.ndarray) -> tuple[list, list, list, dict]:
+def fit_detectors(docs: pd.DataFrame, X: np.ndarray) -> tuple[Pipeline, float, dict, dict, dict]:
+    """Train the classifier on one channel and set both detectors' thresholds on val.
+
+    Returns (model, C, scores, thresholds, flagged). `scores` and `flagged` cover every
+    document; `flagged` also has the `either` rule. The pipeline (extraction/route.py) uses
+    this too, so it routes documents exactly as the results here describe.
+    """
     in_scope = (docs["scope"] == "in_scope").to_numpy()
-    split = docs["split"].to_numpy()
-    val = np.flatnonzero((split == "val") & (docs["scope"] != "tail").to_numpy())
-    test_pass = in_scope_indices(docs, "test")
-    reference = in_scope_indices(docs, "train")
-    groups = negative_sets(docs)
+    val = np.flatnonzero((docs["split"] == "val").to_numpy() & (docs["scope"] != "tail").to_numpy())
 
     # Among equally accurate classifiers, keep the one whose confidence best separates legal
     # from out-of-scope val documents. ROC-AUC needs no threshold; test is never looked at.
@@ -127,10 +130,20 @@ def evaluate_channel(docs: pd.DataFrame, X: np.ndarray) -> tuple[list, list, lis
         return roc_auc_score(~in_scope[val], confidence_scores(model, X[val]))
 
     model, C, _ = train_on_channel(docs, X, tie_break=separates_val)
-    scores = {"confidence": confidence_scores(model, X), "distance": novelty_scores(X, reference)}
+    scores = {"confidence": confidence_scores(model, X), "distance": novelty_scores(X, in_scope_indices(docs, "train"))}
     thresholds = {d: best_threshold(scores[d][val], ~in_scope[val]) for d in scores}
     flagged = {d: scores[d] >= thresholds[d] for d in scores}
     flagged["either"] = flagged["confidence"] | flagged["distance"]
+    return model, C, scores, thresholds, flagged
+
+
+def evaluate_channel(docs: pd.DataFrame, X: np.ndarray) -> tuple[list, list, list, dict]:
+    in_scope = (docs["scope"] == "in_scope").to_numpy()
+    split = docs["split"].to_numpy()
+    test_pass = in_scope_indices(docs, "test")
+    reference = in_scope_indices(docs, "train")
+    groups = negative_sets(docs)
+    model, C, scores, thresholds, flagged = fit_detectors(docs, X)
 
     predicted_type = model.predict(X)
     top_probability = 1 - scores["confidence"]
