@@ -32,7 +32,6 @@ The first run downloads the dataset from Hugging Face (about 360 MB, no account 
 ```python
 !git clone https://github.com/Break-Through-Tech/Legal-2B-multimodal-document-understanding.git
 %cd Legal-2B-multimodal-document-understanding
-!git checkout schemas/class-schemas   # only needed until this branch is merged
 !pip install -r requirements.txt
 !python schemas/build_class_schemas.py
 ```
@@ -78,7 +77,7 @@ These are on the team split: each type is built from 35 to 41 training documents
 
 - **Fit:** all 8 merged schemas accept **100%** of held-out answers and cover 100% of their filled-in fields.
 - **Other types rejected:** every schema rejects **100%** of other document types' held-out answers. This is mostly by design: objects are closed and different types use different field names. Treat it as a sanity check that nothing is wide open, not as proof of quality.
-- **Where the gain comes from:** the dataset's own schemas accept only 25% of validation answers for `FORM_1040` and `PROXY_VOTING`, and 62% for `CREDIT_CARD_STATEMENT`. (On the earlier provisional split, with about twice as many held-out documents, it was 13%, 40% and 53%.) The *Own + nulls* column shows that allowing `null` alone fixes this. So the merge doesn't raise validity: what it adds is **one reusable schema per type**, which the pipeline needs when a document arrives without its own.
+- **Where the gain comes from:** the dataset's own schemas accept only 25% of validation answers for `FORM_1040` and `PROXY_VOTING`, and 62% for `CREDIT_CARD_STATEMENT`. The *Own + nulls* column shows that allowing `null` alone fixes this. So the merge doesn't raise validity: what it adds is **one reusable schema per type**, which the pipeline needs when a document arrives without its own.
 - **Weak spot:** `PATENT`, `ACCOUNT_STATEMENT` and `FORM_1040` have no field that every document requires, so an empty answer `{}` still passes. The report flags this with ⚠️.
 
 ## Dataset issues found

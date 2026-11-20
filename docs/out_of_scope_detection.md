@@ -125,6 +125,8 @@ DINOv2 looks good on test only because test contains no legal photos. A real int
 
 The pipeline will run OCR anyway for extraction, so the text detector costs little extra. It could act as a second opinion on documents the vision detector is unsure about.
 
+**Update (Nov 18): what the pipeline uses.** This replaces the vision pick above. At the Nov 10 lab, Grace picked the ColQwen2 embeddings for the classifier. So the pipeline ([`extraction/route.py`](../extraction/route.py)) uses ColQwen2 for the out-of-scope check too, with the `either` rule, and needs only one embedding model. This is the ColQwen2 detector PR #7 suggested, with the confidence check added. On test it sends no legal document to review and lets 2 of 175 out-of-scope documents through: 36 (the mislabeled petition photo) and 991 (a nutrition label). It also flags none of the 4 legal photos. SigLIP confidence has 0 test errors, but it would add a second embedding model. On val, all three ColQwen2 rules make no mistakes, so val could not choose between them. On test, confidence alone lets 3 through and distance alone lets 6 through. We picked `either` after seeing these test numbers, so "2 of 175" is a little optimistic.
+
 ## Caveats
 
 - Test has only 39 legal documents, so each one moves precision or recall by about 2.5 points. The photo check rests on just 4 documents.
